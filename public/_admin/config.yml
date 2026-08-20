@@ -1,0 +1,35 @@
+backend:
+  name: github
+  repo: haseebkhushnoodrajpoot-cmyk/Mira-luna
+  branch: main
+  base_url: https://mira-luna.pages.dev   # <-- change this to your actual Cloudflare URL later
+  auth_endpoint: https://decapbridge.com/auth
+
+media_folder: public/images
+public_folder: /images
+
+collections:
+  - name: "settings"
+    label: "Site Settings"
+    delete: false
+    editor:
+      preview: false
+    files:
+      - name: "general"
+        label: "Homepage Settings"
+        file: "src/data/settings.json"
+        fields:
+          - label: "Banners & Sections"
+            name: "root"
+            widget: "object"
+            fields:
+              - { label: "Show Hero Section", name: "show_hero", widget: "boolean", default: true }
+              - { label: "Show Collections", name: "show_collections", widget: "boolean", default: true }
+              - { label: "Show Featured Pieces", name: "show_featured", widget: "boolean", default: true }
+              - { label: "Show New Arrivals", name: "show_new_arrivals", widget: "boolean", default: true }
+              - { label: "Show Best Sellers", name: "show_best_sellers", widget: "boolean", default: true }
+              - { label: "Show About Preview", name: "show_about_preview", widget: "boolean", default: true }
+              - { label: "Show Instagram Feed", name: "show_instagram_feed", widget: "boolean", default: true }
+              - { label: "Show WhatsApp Banner", name: "show_whatsapp_banner", widget: "boolean", default: true }
+              - { label: "Show Banners", name: "show_banners", widget: "boolean", default: true }
+              - { label: "Low Stock Threshold", name: "low_stock_threshold", widget: "number", default: 5 }
